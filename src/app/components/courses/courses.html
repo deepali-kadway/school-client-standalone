@@ -1,8 +1,9 @@
 <h2>Courses</h2>
 <ul>
-  @for (item of courses; track item) {
-  <li>{{ item }}</li>
-  } @empty {
-  <li>There are no items.</li>
+  @for (course of courses; track course.id) { -->
+    <!-- we can pass the course object to the course component via @Input directive/property -->
+  <!-- <li>{{ item }}</li> -->
+  <app-course [course]="course"></app-course>
   }
 </ul>
+

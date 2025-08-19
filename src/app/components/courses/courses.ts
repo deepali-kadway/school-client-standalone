@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { Courses as CoursesService } from '../../services/courses';
+import { Courses as CourseService } from '../../services/courses';
+import { Course } from '../course/course';
+import { ICourse } from '../../interfaces/icourse';
 
 @Component({
   selector: 'app-courses',
-  imports: [],
+  imports: [Course],
   templateUrl: './courses.html',
-  styleUrl: './courses.css'
+  styleUrl: './courses.css',
 })
 export class Courses {
+  courses: ICourse[];
 
-  courses: string[];
-
-constructor(service: CoursesService) {
-  //initialize courses from the service
-  this.courses = service.getCourses();
-}
+  // Dependency Injection
+  constructor(service: CourseService) {
+    // initialize courses array with data from service class
+    this.courses = service.getCourses();
+  }
 }
