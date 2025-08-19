@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Home } from './components/home/home';
 import { Courses } from './components/courses/courses';
 import { Navbar } from './components/navbar/navbar';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
