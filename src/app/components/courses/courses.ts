@@ -20,4 +20,9 @@ export class Courses implements OnInit{
   ngOnInit(): void {
   this.courses = this.service.getCourses();
   }
+
+  text:any;
+  alertMessage(message: any){
+this.text=message;
+  }
 }

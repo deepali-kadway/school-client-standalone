@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 
 // Define the interface locally for now
 interface ICourse {
@@ -15,6 +15,14 @@ interface ICourse {
 })
 export class Course implements OnChanges, OnInit, DoCheck, OnDestroy{
   @Input() course: ICourse | undefined;
+
+  // define 'childEvent' to emit data for parent component
+  @Output() childEvent = new EventEmitter();
+
+  // define a function to the event and data
+  sendDataToParent(){
+    this.childEvent.emit(this.course?.name + ' ' + this.course?.level)
+  }
 
   // life cycle hooks?
   // 1. constructor function runs first when a component is created.
