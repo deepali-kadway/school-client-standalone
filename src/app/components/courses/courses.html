@@ -3,7 +3,8 @@
   @for (course of courses; track course.id) { -->
     <!-- we can pass the course object to the course component via @Input directive/property -->
   <!-- <li>{{ item }}</li> -->
-  <app-course [course]="course" (childEvent)="alertMessage($event)"></app-course>
+  <!-- <app-course [course]="course" (childEvent)="alertMessage($event)"></app-course> -->
+  <course [course]="course" (deleteEvent)="deleteCourse($event)"></course>
   }
 </ul>
 <pre>{{text}}</pre>

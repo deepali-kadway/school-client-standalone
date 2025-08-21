@@ -1,8 +1,15 @@
 <!-- ?.name will return the name value or undefined when it does not exist -->
 <ul>
-<li>{{ course?.name + " " + course?.level }}
+<!-- <li>{{ course?.name + " " + course?.level }}
 <button (click)="sendDataToParent()">Send Child Data to Parent</button>
-</li>
+</li> -->
+
+ <li>
+    {{ course?.name + " " + course?.level }}
+    <button class="btn btn-danger" (click)="deleteEventTrigger(course.id)">
+      Delete
+    </button>
+  </li>
 </ul>
 
 

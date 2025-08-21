@@ -17,12 +17,20 @@ export class Course implements OnChanges, OnInit, DoCheck, OnDestroy{
   @Input() course: ICourse | undefined;
 
   // define 'childEvent' to emit data for parent component
-  @Output() childEvent = new EventEmitter();
+  // @Output() childEvent = new EventEmitter();
+// define a function to the event and data
+  // sendDataToParent(){
+  //   this.childEvent.emit(this.course?.name + ' ' + this.course?.level)
+  // }
 
-  // define a function to the event and data
-  sendDataToParent(){
-    this.childEvent.emit(this.course?.name + ' ' + this.course?.level)
+  // define 'deleteEvent' to emit data for parent component
+  @Output() deleteEvent = new EventEmitter();
+
+   // define a function for emitting the event and data
+  deleteEventTrigger(id: number) {
+    this.deleteEvent.emit(id);
   }
+ 
 
   // life cycle hooks?
   // 1. constructor function runs first when a component is created.
